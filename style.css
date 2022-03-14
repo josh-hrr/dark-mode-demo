@@ -1,0 +1,355 @@
+
+        * { 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --lime-green: hsl(163, 72%, 41%);
+            --bright-red: hsl(356, 69%, 56%);
+            --facebook: #168ef4;
+            --twitter: hsl(203, 89%, 53%);
+            --instagram-1: hsl(37, 97%, 70%);
+            --instagram-2: hsl(329, 70%, 58%);
+            --youTube: hsl(348, 97%, 39%);
+            --gray: #5f616d;
+            --cardGray: #f0f3fa;
+            --lightGray: #f8f9fe;
+            --cardTitle: #6f717e; 
+            --switchSpinner: white;
+            --switch: #5f616d;
+            --gray: #5f616d;
+            --cardGray: #f0f3fa; 
+            --lightGray: #f8f9fe;
+            --baseBackground: white;
+            --baseColor: #1d2029;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            color: var(--baseColor);
+            background: var(--baseBackground);
+            padding: 1.2em;
+        }
+
+        .header { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;  
+            max-width: 1440px;
+            margin: 0 auto; 
+        }
+        .header__subtitle--total {
+            margin-top: 0.5em;
+            margin-bottom: 1.5em;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--gray);
+                padding-bottom: 2em;
+                width: 100%;
+                border-bottom: 2px solid var(--gray);
+        } 
+
+        .dark-mode {
+            margin-top: 0.5em;
+            margin-bottom: 1.5em;
+            font-weight: bold;
+            font-size: 1.2em;  
+        }
+        
+        .main-container{ 
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        
+        .wrapper{
+            display: grid;
+            margin: 3em 0; 
+        }
+
+        .card-big {
+            display: grid;  
+            text-align: center; 
+            background-color: var(--cardGray); 
+            margin-bottom: 2em;
+            border-radius: 0.3em;
+            padding: 6em 2em;
+            position: relative;
+        } 
+        .card-facebook::before {  
+            content: "";
+            height: 0.5em; 
+            border-top-left-radius: 0.3em;  
+            border-top-right-radius: 0.3em; 
+            background: var(--facebook);
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        .card-twitter::before { 
+            content: "";
+            height: 0.5em; 
+            border-top-left-radius: 0.3em;  
+            border-top-right-radius: 0.3em; 
+            background: var(--twitter);
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        .card-instagram::before { 
+            content: "";
+            height: 0.5em; 
+            border-top-left-radius: 0.3em;  
+            border-top-right-radius: 0.3em;  
+            background-image: linear-gradient(to right, var(--instagram-1) 0%, var(--instagram-2)100%); 
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        .card-youtube::before { 
+            content: "";
+            height: 0.5em; 
+            border-top-left-radius: 0.3em;  
+            border-top-right-radius: 0.3em; 
+            background: var(--youTube); 
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }  
+        .card__social img {  
+            margin-right: 0.3em;
+            max-height: 100%;
+            width: 15px; 
+        }
+        .card__social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+            font-weight: bold;
+            color: var(--cardTitle);
+        }
+
+        .big-number {
+            font-size: 4em;
+            font-weight: bold;
+        }
+        .followers {
+            color: var(--cardTitle);
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            margin-bottom: 1.2em;
+        }
+        .today {
+            color: var(--lime-green);
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        /* cards small */
+        
+        
+        .main-container .header__title--small-card{ 
+            color: var(--gray);
+            margin-top: 2.5em;
+
+        } 
+
+        .card-small {   
+            display: grid;
+            grid-template-areas:    "title image"
+                                    "number percentage";
+            padding: 2em; 
+            background-color: var(--cardGray);
+            border-radius: 0.3em; 
+            margin-top: 2em;
+            row-gap: 1em;
+        }
+        .card-small p {
+            margin: 0;  
+        } 
+        .card-small__title{
+            display: flex; 
+            justify-content: flex-start;
+            text-align: left;
+            grid-area: title;
+        }
+        .card-small__image {  
+            display: flex; 
+            justify-content: flex-end; 
+            text-align: right;
+            grid-area: image; 
+        } 
+        .card-small__number {  
+            display: flex; 
+            justify-content: flex-start;  
+            align-items: center;
+            text-align: left;
+            grid-area: number;
+            font-weight: bold;
+            font-size: 2em;
+            margin-top: 1.2em;
+        }  
+        .card-small__percentage { 
+            display: flex; 
+            justify-content: flex-end;  
+            align-items: flex-end;
+
+            grid-area: percentage;
+            font-weight: bold;
+            font-size: 0.9em; 
+            color: var(--lime-green); 
+        } 
+        .card-small__percentage span { 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-small__percentage .card-small__percentage--img { 
+            margin-right: 0.4em; 
+        }
+        .card-small__percentage.is-danger {
+            color: var(--bright-red);
+        }  
+
+        /* dark mode */
+
+        .dark-mode {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .checkbox {
+            display: none;
+        }
+
+        .checkbox:checked + .switch::before {
+            transform: translateX(0);
+        }
+        
+        .switch {   
+            display: block;
+            width: 80px;
+            height: 40px;
+            border-radius: 20px; 
+            background-color: var(--switch);
+            padding: 5px;
+            box-sizing: border-box; 
+            cursor: pointer;
+            user-select: none;
+        }
+        .switch::before {
+            content: "";
+            display: block; 
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;  
+            background: var(--switchSpinner);
+            transform: translateX(40px);
+            transition: 0.3s;
+            will-change: transform;
+        }
+
+        @media (min-width: 480px){
+            .wrapper{ 
+               display: grid; 
+               grid-template-columns: 1fr 1fr;  
+               column-gap: 1em;  
+            }
+        }
+
+        @media (min-width: 768px){
+            .wrapper{ 
+               display: grid; 
+               grid-template-columns: 1fr 1fr 1fr;  
+               column-gap: 1em;  
+            }
+        }
+        @media (min-width: 1024px){
+            .wrapper{ 
+               display: grid; 
+               grid-template-columns: 1fr 1fr 1fr 1fr;  
+               column-gap: 1em;  
+            }
+        } 
+        .is-dark-mode {
+            --lightGray: #1d2029; 
+            --baseBackground: #1d2029;
+            --baseColor: white; 
+            --gray: #8088ad; 
+            --cardGray: #252b43;
+            --cardTitle: #8088ad;
+            --switchSpinner: #282943;
+            --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%); 
+        } 
+        .is-light-mode {
+            --gray: #5f616d;
+            --cardGray: #f0f3fa;
+            --lightGray: #f8f9fe;
+            --cardTitle: #6f717e; 
+            --switchSpinner: white;
+            --switch: #5f616d;
+            --gray: #5f616d;
+            --cardGray: #f0f3fa; 
+            --lightGray: #f8f9fe;
+            --baseBackground: white;
+            --baseColor: #1d2029;
+        }
+
+        .is-dark-mode .switch {
+            background: var(--switch);
+        }
+
+        @media (prefers-color-scheme: dark){ 
+            :root {
+            --lightGray: #1d2029; 
+            --baseBackground: #1d2029;
+            --baseColor: white; 
+            --gray: #8088ad; 
+            --cardGray: #252b43;
+            --cardTitle: #8088ad;
+            --switchSpinner: #282943;
+            --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%); 
+            } 
+            .header__subtitle--total {  
+                padding-bottom: 2em;
+                width: 100%;
+                border-bottom: 1px solid gray;
+            }
+            .switch {
+                background: var(--switch);
+            } 
+
+            /*
+            .card-big {
+                background: #252b43; 
+            }
+            .card__social, 
+            .followers, 
+            .header__title--small-card, 
+            .header__title--small-card, 
+            .header__subtitle--total{
+                color: var(--cardTitle);
+            }
+            .card-small{
+                background: var(--cardGray);
+            }
+            .switch {
+                background-image: var(--switch);
+            }
+            .switch::before{
+                background: var(--cardGray);
+            }
+            */
+        }
+
+
+
